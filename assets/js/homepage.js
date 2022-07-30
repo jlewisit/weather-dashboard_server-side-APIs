@@ -9,11 +9,11 @@ var name = document.querySelector('.name');
 var desc = document.querySelector('.desc');
 var temp = document.querySelector('.temp');
 
-button.addEventListener('click', function gettingJSON(){
-        document.write("jquery loaded");
-        $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=London&APPID=972645ea3e3eb66f33aa8de495ed0816",function(json){
-            document.write(JSON.stringify(json));
+button.addEventListener('click', function gettingJSON() {
+        $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=London&APPID=972645ea3e3eb66f33aa8de495ed0816", function(json) {
+            JSON.stringify(json);
 
+                // document.getElementById('name').innerHTML = nameValue;
                 name.innerHTML = nameValue;
                 temp.innerHTML = tempValue;
                 desc.innerHTML = descValue;
