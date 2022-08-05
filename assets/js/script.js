@@ -48,4 +48,6 @@ var input = document.querySelector('.input');
 
 // }
 
-button.addEventListener('click', getWeather());
+// button.addEventListener('click', getWeather());
+
+button.addEventListener('click', getWeather);
