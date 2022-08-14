@@ -4,14 +4,12 @@ var cityName = document.querySelector('.cityName');
 var desc = document.querySelector('.desc');
 var temp = document.querySelector('.temp');
 var input = document.querySelector('.input');
-// var apiKey = "972645ea3e3eb66f33aa8de495ed0816";
-var apiKey = "9281b394d8bfd8899fe3cd5158e1a60e";
+var apiKey = "972645ea3e3eb66f33aa8de495ed0816";
 
 // Getting weather from the One Call API using coordinates
-function getWeather(lon, lat) {
-    console.log(lon, lat);
-var apiUrl2 ='https://api.openweathermap.org/data/3.0/onecall?lat='+lat+'&lon='+lon+'&exclude=hourly&appid='+apiKey;
-    // var apiUrl2 ='https://api.openweathermap.org/data/3.0/onecall?lat='+lat+'&lon='+lon+'&appid='+apiKey
+function getWeather(lat, lon) {
+    console.log(lat, lon, "working");
+var apiUrl2 ='https://api.openweathermap.org/data/3.0/onecall?lat='+lat+'&lon='+lon+'&exclude=hourly,daily&appid='+apiKey;
 fetch(apiUrl2)
 .then(function (response) {
     if (response.ok) {
@@ -44,7 +42,8 @@ console.log(err);
                     console.log(response);
                     response.json().then(function (data) {
                         console.log(data);
-                        getWeather(data[0].lon,data[0].lat)
+                        console.log("hello world!");
+                        getWeather(data[0].lat,data[0].lon)
                     });
                 } else {
                     alert('Error: ' + response.statusText);
